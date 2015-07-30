@@ -12,7 +12,7 @@
 @interface SFNaivgateAnimator : UIPercentDrivenInteractiveTransition <UIViewControllerAnimatedTransitioning>
 
 @property (assign, nonatomic) BOOL isPush;
-@property (assign, nonatomic) CGFloat animationDuration;
+@property (assign, nonatomic) NSTimeInterval animationDuration;
 @property (assign, nonatomic) UIEdgeInsets insets;
 @property (assign, nonatomic) CGRect interactiveBounds;
 @property (assign, nonatomic) CGRect navigateViewFrame;
@@ -72,7 +72,7 @@
     [self getNavigateAnimator].interactable = interactable;
 }
 
-- (void)sf_setNavigateAnimationDuration:(CGFloat)duration
+- (void)sf_setNavigateAnimationDuration:(NSTimeInterval)duration
 {
     [self getNavigateAnimator].animationDuration = duration;
 }
@@ -191,7 +191,7 @@
 }
 
 #pragma mark UIViewControllerAnimatedTransitioning
-- (CGFloat)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext
+- (NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext
 {
     if (_isPush) {
         return _animationDuration;

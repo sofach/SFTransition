@@ -46,6 +46,6 @@
  *
  *  @param duration
  */
-- (void)sf_setNavigateAnimationDuration:(CGFloat)duration;
+- (void)sf_setNavigateAnimationDuration:(NSTimeInterval)duration;
 
 @end
