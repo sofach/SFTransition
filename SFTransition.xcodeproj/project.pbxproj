@@ -14,10 +14,13 @@
 		AD94E3C11B68823E004E179E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD94E3C01B68823E004E179E /* Images.xcassets */; };
 		AD94E3C41B68823E004E179E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD94E3C21B68823E004E179E /* LaunchScreen.xib */; };
 		AD94E3D01B68823E004E179E /* SFTransitionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AD94E3CF1B68823E004E179E /* SFTransitionTests.m */; };
-		AD94E3E91B68D4D2004E179E /* NSObject+SFPresent.m in Sources */ = {isa = PBXBuildFile; fileRef = AD94E3E81B68D4D2004E179E /* NSObject+SFPresent.m */; };
-		ADD3FEFD1B69C2E6006CFB5E /* NSObject+SFNavigate.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD3FEFC1B69C2E6006CFB5E /* NSObject+SFNavigate.m */; };
 		ADD3FF091B69DB51006CFB5E /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD3FF081B69DB51006CFB5E /* DetailViewController.m */; };
 		ADD3FF0B1B69FEE7006CFB5E /* SFTransition.podspec in Resources */ = {isa = PBXBuildFile; fileRef = ADD3FF0A1B69FEE7006CFB5E /* SFTransition.podspec */; };
+		ADD3FF141B6B464B006CFB5E /* SFPresentTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD3FF131B6B464B006CFB5E /* SFPresentTransition.m */; };
+		ADD3FF171B6B465C006CFB5E /* SFNavigateTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD3FF161B6B465C006CFB5E /* SFNavigateTransition.m */; };
+		ADD3FF1A1B6B489B006CFB5E /* SFTranslationAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD3FF191B6B489B006CFB5E /* SFTranslationAnimator.m */; };
+		ADD3FF1D1B6B50C2006CFB5E /* SFAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD3FF1C1B6B50C2006CFB5E /* SFAnimator.m */; };
+		ADD3FF201B6B7719006CFB5E /* SFRotationAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD3FF1F1B6B7719006CFB5E /* SFRotationAnimator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,13 +47,19 @@
 		AD94E3C91B68823E004E179E /* SFTransitionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SFTransitionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD94E3CE1B68823E004E179E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD94E3CF1B68823E004E179E /* SFTransitionTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SFTransitionTests.m; sourceTree = "<group>"; };
-		AD94E3E71B68D4D2004E179E /* NSObject+SFPresent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SFPresent.h"; sourceTree = "<group>"; };
-		AD94E3E81B68D4D2004E179E /* NSObject+SFPresent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SFPresent.m"; sourceTree = "<group>"; };
-		ADD3FEFB1B69C2E6006CFB5E /* NSObject+SFNavigate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SFNavigate.h"; sourceTree = "<group>"; };
-		ADD3FEFC1B69C2E6006CFB5E /* NSObject+SFNavigate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SFNavigate.m"; sourceTree = "<group>"; };
 		ADD3FF071B69DB51006CFB5E /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		ADD3FF081B69DB51006CFB5E /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		ADD3FF0A1B69FEE7006CFB5E /* SFTransition.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SFTransition.podspec; sourceTree = "<group>"; };
+		ADD3FF121B6B464B006CFB5E /* SFPresentTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFPresentTransition.h; sourceTree = "<group>"; };
+		ADD3FF131B6B464B006CFB5E /* SFPresentTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFPresentTransition.m; sourceTree = "<group>"; };
+		ADD3FF151B6B465C006CFB5E /* SFNavigateTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFNavigateTransition.h; sourceTree = "<group>"; };
+		ADD3FF161B6B465C006CFB5E /* SFNavigateTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFNavigateTransition.m; sourceTree = "<group>"; };
+		ADD3FF181B6B489B006CFB5E /* SFTranslationAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFTranslationAnimator.h; sourceTree = "<group>"; };
+		ADD3FF191B6B489B006CFB5E /* SFTranslationAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFTranslationAnimator.m; sourceTree = "<group>"; };
+		ADD3FF1B1B6B50C2006CFB5E /* SFAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFAnimator.h; sourceTree = "<group>"; };
+		ADD3FF1C1B6B50C2006CFB5E /* SFAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFAnimator.m; sourceTree = "<group>"; };
+		ADD3FF1E1B6B7719006CFB5E /* SFRotationAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFRotationAnimator.h; sourceTree = "<group>"; };
+		ADD3FF1F1B6B7719006CFB5E /* SFRotationAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFRotationAnimator.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,10 +146,16 @@
 		AD94E3D91B688286004E179E /* lib */ = {
 			isa = PBXGroup;
 			children = (
-				AD94E3E71B68D4D2004E179E /* NSObject+SFPresent.h */,
-				AD94E3E81B68D4D2004E179E /* NSObject+SFPresent.m */,
-				ADD3FEFB1B69C2E6006CFB5E /* NSObject+SFNavigate.h */,
-				ADD3FEFC1B69C2E6006CFB5E /* NSObject+SFNavigate.m */,
+				ADD3FF121B6B464B006CFB5E /* SFPresentTransition.h */,
+				ADD3FF131B6B464B006CFB5E /* SFPresentTransition.m */,
+				ADD3FF151B6B465C006CFB5E /* SFNavigateTransition.h */,
+				ADD3FF161B6B465C006CFB5E /* SFNavigateTransition.m */,
+				ADD3FF1B1B6B50C2006CFB5E /* SFAnimator.h */,
+				ADD3FF1C1B6B50C2006CFB5E /* SFAnimator.m */,
+				ADD3FF181B6B489B006CFB5E /* SFTranslationAnimator.h */,
+				ADD3FF191B6B489B006CFB5E /* SFTranslationAnimator.m */,
+				ADD3FF1E1B6B7719006CFB5E /* SFRotationAnimator.h */,
+				ADD3FF1F1B6B7719006CFB5E /* SFRotationAnimator.m */,
 			);
 			path = lib;
 			sourceTree = "<group>";
@@ -247,11 +262,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD94E3BC1B68823E004E179E /* ViewController.m in Sources */,
+				ADD3FF141B6B464B006CFB5E /* SFPresentTransition.m in Sources */,
 				AD94E3B91B68823E004E179E /* AppDelegate.m in Sources */,
-				ADD3FEFD1B69C2E6006CFB5E /* NSObject+SFNavigate.m in Sources */,
+				ADD3FF171B6B465C006CFB5E /* SFNavigateTransition.m in Sources */,
+				ADD3FF1D1B6B50C2006CFB5E /* SFAnimator.m in Sources */,
+				ADD3FF201B6B7719006CFB5E /* SFRotationAnimator.m in Sources */,
 				ADD3FF091B69DB51006CFB5E /* DetailViewController.m in Sources */,
-				AD94E3E91B68D4D2004E179E /* NSObject+SFPresent.m in Sources */,
 				AD94E3B61B68823E004E179E /* main.m in Sources */,
+				ADD3FF1A1B6B489B006CFB5E /* SFTranslationAnimator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

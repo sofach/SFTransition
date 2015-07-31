@@ -8,23 +8,58 @@
 
 #import "ViewController.h"
 #import "DetailViewController.h"
-#import "NSObject+SFNavigate.h"
-#import "NSObject+SFPresent.h"
+#import "SFNavigateTransition.h"
+#import "SFPresentTransition.h"
+#import "SFTranslationAnimator.h"
 
 @interface ViewController ()
 
 - (IBAction)presentClicked:(id)sender;
 - (IBAction)pushClicked:(id)sender;
 
+@property (strong, nonatomic) SFNavigateTransition *navigateTransition;
+@property (strong, nonatomic) SFPresentTransition *presentTransition;
+
 @end
 
 @implementation ViewController
+
+- (SFPresentTransition *)presentTransition
+{
+    if (!_presentTransition) {
+        
+        _presentTransition = [SFPresentTransition new];
+        SFTranslationAnimator *animator = [[SFTranslationAnimator alloc] init];
+//        animator.springDamping = 0.5;
+//        animator.animationDuration = 0.8;
+        animator.toViewFrame = CGRectOffset([UIScreen mainScreen].bounds, [UIScreen mainScreen].bounds.size.width, 0);
+//    animator.interactable = NO;
+    animator.fromViewInsets = UIEdgeInsetsMake(50, 50, 50, 50);
+        _presentTransition.animator = animator;
+    }
+    return _presentTransition;
+}
+
+- (SFNavigateTransition *)navigateTransition
+{
+    if (!_navigateTransition) {
+        
+        _navigateTransition = [SFNavigateTransition new];
+//        SFTranslationAnimator *animator = [[SFTranslationAnimator alloc] init];
+//        animator.springDamping = 0.5;
+//        animator.animationDuration = 0.8;
+//        animator.toViewFrame = CGRectOffset([UIScreen mainScreen].bounds, -[UIScreen mainScreen].bounds.size.width, 0);
+//        animator.interactable = NO;
+//        animator.fromViewInsets = UIEdgeInsetsZero;
+//        _navigateTransition.animator = animator;
+    }
+    return _navigateTransition;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.title = @"marster";
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -37,22 +72,15 @@
     DetailViewController *detailVC = [[DetailViewController alloc] initWithNibName:nil bundle:nil];
     detailVC.isPresent = YES;
     UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:detailVC];
-    navi.transitioningDelegate = self;
     
-    [self sf_setPresentAnimationSpringDamping:0.5];
-    [self sf_setPresentAnimationDuration:1.0];
-    [self sf_setPresentViewFrame:CGRectOffset([UIScreen mainScreen].bounds, 0*[UIScreen mainScreen].bounds.size.width, -[UIScreen mainScreen].bounds.size.height)];
-//    [self sf_setPresentInteractable:NO];
-//    [self sf_setPresentInsets:UIEdgeInsetsZero];
-    
+    navi.transitioningDelegate = self.presentTransition; //set delegate and custom animator must before presentViewController
     [self presentViewController:navi animated:YES completion:nil];
 }
 
 - (IBAction)pushClicked:(id)sender {
     
     DetailViewController *detailVC = [[DetailViewController alloc] initWithNibName:nil bundle:nil];
-    self.navigationController.delegate = self;
-    [self sf_setNavigateViewFrame:CGRectOffset([UIScreen mainScreen].bounds, 0, [UIScreen mainScreen].bounds.size.height)];
+    self.navigationController.delegate = self.navigateTransition; //must set delegate before pushViewController
     [self.navigationController pushViewController:detailVC animated:YES];
 }
 
